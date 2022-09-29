@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css"/>
+    </head>
+    <body>
+        <h1>BudgeT</h1>
+        <div class="container">
+            <div class="top-box">
+                <div class="first-panel-box">
+                    <h2>Budget Overview:</h2>
+                    <div id="monthly-summary">
+
+                    </div>
+                </div>
+                <div class="second-panel">
+                    <h2>Set your budget: </h2>
+                    <form id="budget-form">
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="first-panel-box">
+                <h2>Add a new expense/income:</h2>
+                <div id="error"class="hidden">
+        
+                </div>
+                <form id="new-expense-form">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="type">Income or Expense?</label>
+                            <select name="type" id="type-select">
+                                <option value="null">(select)</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input id="description" name="description" type="text" placeholder="eg. Groceries">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input id="date" name="date" type="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount($)</label>
+                            <input id="amount" name="amount" type="text" placeholder="eg. 50.00">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="lg"type="reset">Cancel</button>
+                        <button class="lg"type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h2>History</h2>
+                <div>
+                    <form>
+                        <div class="form-group radios">
+                            <p>Filter by: </p>
+                            <div class="radios">
+                                <input type="radio" id="newest" name="filter" value="newest">
+                                <label for="newest">Newest</label>
+                            </div>
+                            <div class="radios">
+                                <input type="radio" id="oldest" name="filter" value="oldest">
+                                <label for="oldest">Oldest</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="expenses" class="second-panel">
+    
+            </div>
+        </div>
+        <script src="db.js"></script>
+        <script src="view.js"></script>
+        <script src="model.js"></script>
+        <script src="controller.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
